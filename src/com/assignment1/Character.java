@@ -66,4 +66,22 @@ public abstract class Character {
         }
         return new PrimaryAttribute(strength, dexterity, intelligence);
     }
+
+    public String characterSheet() {
+        StringBuilder string = new StringBuilder("Character name: ");
+        string.append(this.name + "\n");
+        string.append("Character level: ");
+        string.append(this.level + "\n");
+        string.append("Strength: ");
+        string.append(this.total.getStrength() + "\n");
+        string.append("Dexterity: ");
+        string.append(this.total.getDexterity() + "\n");
+        string.append("Intelligence: ");
+        string.append(this.total.getIntelligence() + "\n");
+        string.append("DPS: ");
+        string.append(this.calculateDamage() + "\n");
+        return string.toString();
+    }
+
+    public abstract float calculateDamage();
 }

@@ -18,5 +18,6 @@ public class Main {
         System.out.print(gandalf.calculateDamage() + "\n");
         gandalf.equipItem(staff);
         System.out.print(gandalf.calculateDamage() + "\n");
+        System.out.print(gandalf.characterSheet());
     }
 }
