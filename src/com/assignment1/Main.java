@@ -16,6 +16,7 @@ public class Main {
                 "Gray Robes",
                 2,
                 ArmorType.CLOTH,
+                Slot.BODY,
                 1,
                 1,
                 5);

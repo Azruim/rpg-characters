@@ -2,7 +2,7 @@ package com.assignment1;
 
 public class Mage extends Character{
 
-    Mage(String name) {
+    public Mage(String name) {
         this.name = name;
         this.base = new PrimaryAttribute(1, 1, 8);
         this.onLevelUp = new PrimaryAttribute(1, 1, 5);
