@@ -12,11 +12,18 @@ public class Main {
                 5,
                 2);
 
-        System.out.print(gandalf.calculateDamage() + "\n");
-        gandalf.equipItem(staff);
+        Armor robe = new Armor(
+                "Gray Robes",
+                2,
+                ArmorType.CLOTH,
+                1,
+                1,
+                5);
+
         gandalf.levelUp();
-        System.out.print(gandalf.calculateDamage() + "\n");
         gandalf.equipItem(staff);
+        System.out.print(gandalf.calculateDamage() + "\n");
+        gandalf.equipItem(robe);
         System.out.print(gandalf.calculateDamage() + "\n");
         System.out.print(gandalf.characterSheet());
     }

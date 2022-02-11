@@ -13,17 +13,6 @@ public class Mage extends Character{
     }
 
     public float calculateDamage() {
-        int damage;
-        float attackSpeed;
-        Weapon weapon = ((Weapon)equipment.get(Slot.WEAPON));
-        if (weapon == null) {
-            damage = 0;
-            attackSpeed = 0;
-        }
-        else {
-            damage = ((Weapon)equipment.get(Slot.WEAPON)).getDamage();
-            attackSpeed = ((Weapon)equipment.get(Slot.WEAPON)).getAttackSpeed();
-        }
-        return damage * attackSpeed * (1 + total.getIntelligence() / 100f);
+        return this.calculateBaseDamage() * (1 + total.getIntelligence() / 100f);
     }
 }

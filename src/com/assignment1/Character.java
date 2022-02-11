@@ -48,6 +48,7 @@ public abstract class Character {
             }
             else {
                 // TODO Throw InvalidArmorException
+                System.out.print("Invalid armor exception");
             }
         }
         updateTotalAttributes();
@@ -81,6 +82,20 @@ public abstract class Character {
         string.append("DPS: ");
         string.append(this.calculateDamage() + "\n");
         return string.toString();
+    }
+
+    public float calculateBaseDamage() {
+        int damage;
+        float attackSpeed;
+        Weapon weapon = ((Weapon) equipment.get(Slot.WEAPON));
+        if (weapon == null) {
+            damage = 0;
+            attackSpeed = 0;
+        } else {
+            damage = ((Weapon) equipment.get(Slot.WEAPON)).getDamage();
+            attackSpeed = ((Weapon) equipment.get(Slot.WEAPON)).getAttackSpeed();
+        }
+        return damage * attackSpeed;
     }
 
     public abstract float calculateDamage();
