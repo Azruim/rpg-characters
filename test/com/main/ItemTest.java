@@ -1,7 +1,13 @@
-package com.assignment1;
+package com.main;
 
-import Items.Armor;
-import Items.Weapon;
+import characters.Warrior;
+import enums.ArmorType;
+import enums.Slot;
+import enums.WeaponType;
+import exceptions.InvalidArmorException;
+import exceptions.InvalidWeaponException;
+import items.Armor;
+import items.Weapon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -73,7 +79,9 @@ class ItemTest {
                 7,
                 1.1f);
 
-        Assertions.assertTrue(warrior.equipItem(weapon));
+        boolean result = warrior.equipItem(weapon);
+
+        Assertions.assertTrue(result);
     }
 
     @Test
@@ -88,12 +96,15 @@ class ItemTest {
                 0,
                 0);
 
-        Assertions.assertTrue(warrior.equipItem(armor));
+        boolean result = warrior.equipItem(armor);
+
+        Assertions.assertTrue(result);
     }
 
     @Test
     public void calculateDamage_noWeapon_correctDps() {
         Warrior warrior = new Warrior("Brienne of Tarth");
+
         float actual = warrior.calculateDamage();
         float expected = 1f*(1f + (5f / 100f));
 

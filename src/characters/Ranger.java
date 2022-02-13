@@ -1,4 +1,8 @@
-package com.assignment1;
+package characters;
+
+import attributes.PrimaryAttribute;
+import enums.ArmorType;
+import enums.WeaponType;
 
 public class Ranger extends Character {
     public Ranger(String name) {

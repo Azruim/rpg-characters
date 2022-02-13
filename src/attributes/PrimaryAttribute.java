@@ -1,4 +1,4 @@
-package com.assignment1;
+package attributes;
 
 public class PrimaryAttribute {
 
@@ -6,7 +6,7 @@ public class PrimaryAttribute {
     private int dexterity;
     private int intelligence;
 
-    PrimaryAttribute(int strength, int dexterity, int intelligence) {
+    public PrimaryAttribute(int strength, int dexterity, int intelligence) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.intelligence = intelligence;

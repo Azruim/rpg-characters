@@ -1,7 +1,7 @@
-package com.assignment1;
+package exceptions;
 
 public class InvalidArmorException extends RuntimeException {
     public InvalidArmorException(String errorMessage) {
-        super(errorMessage + "\n");
+        super(errorMessage);
     }
 }

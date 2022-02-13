@@ -1,4 +1,4 @@
-package com.assignment1;
+package enums;
 
 public enum ArmorType {
     CLOTH,

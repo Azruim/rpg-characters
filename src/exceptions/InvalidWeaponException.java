@@ -1,7 +1,7 @@
-package com.assignment1;
+package exceptions;
 
 public class InvalidWeaponException extends RuntimeException {
     public InvalidWeaponException(String errorMessage) {
-        super(errorMessage + "\n");
+        super(errorMessage);
     }
 }
