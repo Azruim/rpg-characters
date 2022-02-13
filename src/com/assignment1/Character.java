@@ -33,33 +33,34 @@ public abstract class Character {
         updateTotalAttributes();
     }
 
-    public void equipItem(Item item) {
+    public boolean equipItem(Item item) {
         if (item.slot == Slot.WEAPON) {
-            try {
+            //try {
                 if (!weaponWhiteList.contains(((Weapon) item).getType()))
                     throw new InvalidWeaponException("Cannot equip weapon type " + ((Weapon) item).getType());
                 if (item.minLevel > level)
                     throw new InvalidWeaponException("Weapon level too high!");
                 equipment.put(item.slot, item);
                 updateTotalAttributes();
-            }
-            catch (InvalidWeaponException ex) {
-                System.out.print(ex);
-            }
+            //}
+//            catch (InvalidWeaponException ex) {
+//                System.out.print(ex);
+//            }
         }
         else {
-            try {
+            //try {
                 if (!armorWhiteList.contains(((Armor) item).getType()))
                     throw new InvalidArmorException("Cannot equip armor type " + ((Armor) item).getType());
                 if (item.minLevel > level)
                     throw new InvalidArmorException("Armor level too high!");
                 equipment.put(item.slot, item);
                 updateTotalAttributes();
-            }
-            catch (InvalidWeaponException ex) {
-                System.out.print(ex);
-            }
+//            }
+//            catch (InvalidWeaponException ex) {
+//                System.out.print(ex);
+//            }
         }
+        return true;
     }
 
     public PrimaryAttribute getArmorAttributes() {
@@ -103,7 +104,7 @@ public abstract class Character {
             damage = ((Weapon) equipment.get(Slot.WEAPON)).getDamage();
             attackSpeed = ((Weapon) equipment.get(Slot.WEAPON)).getAttackSpeed();
         }
-        return damage * attackSpeed;
+        return Math.max(damage, 1) * Math.max(attackSpeed, 1);
     }
 
     public abstract float calculateDamage();
