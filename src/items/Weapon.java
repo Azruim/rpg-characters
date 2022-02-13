@@ -1,4 +1,7 @@
-package com.assignment1;
+package items;
+
+import enums.Slot;
+import enums.WeaponType;
 
 public class Weapon extends Item {
     private final WeaponType type;

@@ -1,9 +1,9 @@
 package com.assignment1;
 
+import Items.Armor;
+import Items.Weapon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ItemTest {
 

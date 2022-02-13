@@ -1,5 +1,8 @@
 package com.assignment1;
 
+import Items.Armor;
+import Items.Weapon;
+
 public class Main {
 
     public static void main(String[] args) {

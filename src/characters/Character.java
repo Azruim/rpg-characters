@@ -1,5 +1,9 @@
 package com.assignment1;
 
+import Items.Armor;
+import Items.Item;
+import Items.Weapon;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
