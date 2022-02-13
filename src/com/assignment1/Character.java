@@ -35,23 +35,31 @@ public abstract class Character {
 
     public void equipItem(Item item) {
         if (item.slot == Slot.WEAPON) {
-            if (weaponWhiteList.contains(((Weapon) item).getType()) && item.minLevel <= level)
+            try {
+                if (!weaponWhiteList.contains(((Weapon) item).getType()))
+                    throw new InvalidWeaponException("Cannot equip weapon type " + ((Weapon) item).getType());
+                if (item.minLevel > level)
+                    throw new InvalidWeaponException("Weapon level too high!");
                 equipment.put(item.slot, item);
-            else {
-                // TODO Throw InvalidWeaponException
-                System.out.print("Invalid weapon exception!");
+                updateTotalAttributes();
+            }
+            catch (InvalidWeaponException ex) {
+                System.out.print(ex);
             }
         }
         else {
-            if (armorWhiteList.contains(((Armor) item).getType()) && item.minLevel <= level) {
+            try {
+                if (!armorWhiteList.contains(((Armor) item).getType()))
+                    throw new InvalidArmorException("Cannot equip armor type " + ((Armor) item).getType());
+                if (item.minLevel > level)
+                    throw new InvalidArmorException("Armor level too high!");
                 equipment.put(item.slot, item);
+                updateTotalAttributes();
             }
-            else {
-                // TODO Throw InvalidArmorException
-                System.out.print("Invalid armor exception");
+            catch (InvalidWeaponException ex) {
+                System.out.print(ex);
             }
         }
-        updateTotalAttributes();
     }
 
     public PrimaryAttribute getArmorAttributes() {

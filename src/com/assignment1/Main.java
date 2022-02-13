@@ -7,7 +7,7 @@ public class Main {
 
         Weapon staff = new Weapon(
                 "Staff of Destiny",
-                2,
+                3,
                 WeaponType.STAFF,
                 5,
                 2);
