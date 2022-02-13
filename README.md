@@ -4,7 +4,7 @@
 
 ### First Noroff Java assignment.
 
-The goal of this assignment was to create a character class system as a console app using plain Java. As requirements the app should contain multiple classes with differing attributes. Characters should also be able to equip weapons and armor which affect the given character's attributes. Equipping weapons and armor should be validated by level requirement and types. Finally, characters should have a character sheet method that prints out character details including damage output in damage per second. 
+The goal of this assignment was to create a character class system as a console application using plain Java. As requirements the app should contain multiple classes with differing attributes. Characters should also be able to equip weapons and armor which affect the given character's attributes. Equipping weapons and armor should be validated by level requirement and types. Finally, characters should have a character sheet method that prints out character details including damage output in damage per second. 
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ This is an IntelliJ IDEA Java project with the source code only. You can clone t
 
 ## Usage
 
-This was never ment for any practical use. The main functionalities can be found in the JUnit5 tests. You can also create characters in the main class to test out different character and item combinations and print out character sheets. 
+This application was never ment for any practical use. The main functionalities can be found in the JUnit5 tests. You can also create characters in the main class to test out different character and item combinations and print out character sheets. 
 
 ## Maintainers
 
