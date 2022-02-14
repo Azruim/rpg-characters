@@ -16,11 +16,11 @@ The goal of this assignment was to create a character class system as a console 
 
 ## Install
 
-This is an IntelliJ IDEA Java project with the source code only. You can clone this repository and open the project in an IDE of your choice or alternatively run it in the console. The project has also JUnit5 test methods to test main functionalities.
+This is an IntelliJ IDEA Java project with the source code only. Install JDK 17 and you can then clone this repository and open the project in an IDE of your choice or alternatively run it in a terminal. The project has also JUnit5 test methods to test main functionalities.
 
 ## Usage
 
-This application was never ment for any practical use. The main functionalities can be found in the JUnit5 tests. You can also create characters in the main class to test out different character and item combinations and print out character sheets. 
+This application was never ment for any practical use. The main functionalities can be found in the JUnit5 tests. You can also characters on your own in the main class to test out different character and item combinations and print out character sheets. 
 
 ## Maintainers
 
