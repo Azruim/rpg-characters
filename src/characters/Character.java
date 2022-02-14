@@ -1,6 +1,6 @@
 package characters;
 
-import attributes.PrimaryAttribute;
+import attributes.PrimaryAttributes;
 import enums.ArmorType;
 import enums.Slot;
 import enums.WeaponType;
@@ -18,15 +18,15 @@ public abstract class Character {
     protected String name;
     protected int level = 1;
 
-    protected PrimaryAttribute onLevelUp;
-    protected PrimaryAttribute base;
-    protected PrimaryAttribute total = new PrimaryAttribute(0, 0,0);
+    protected PrimaryAttributes onLevelUp;
+    protected PrimaryAttributes base;
+    protected PrimaryAttributes total = new PrimaryAttributes(0, 0,0);
 
     protected HashMap<Slot, Item> equipment = new HashMap<>();
     protected ArrayList<WeaponType> weaponWhiteList = new ArrayList<>();
     protected ArrayList<ArmorType> armorWhiteList = new ArrayList<>();
 
-    public PrimaryAttribute getTotal() {
+    public PrimaryAttributes getTotal() {
         return total;
     }
 
@@ -40,7 +40,7 @@ public abstract class Character {
     }
 
     protected void updateTotalAttributes() {
-        PrimaryAttribute armor = getArmorAttributes();
+        PrimaryAttributes armor = getArmorAttributes();
         this.total.setStrength(base.getStrength() + onLevelUp.getStrength() * (level - 1) + armor.getStrength());
         this.total.setDexterity(base.getDexterity() + onLevelUp.getDexterity() * (level - 1) + armor.getDexterity());
         this.total.setIntelligence(base.getIntelligence() + onLevelUp.getIntelligence() * (level - 1) + armor.getIntelligence());
@@ -69,7 +69,7 @@ public abstract class Character {
         return true;
     }
 
-    private PrimaryAttribute getArmorAttributes() {
+    private PrimaryAttributes getArmorAttributes() {
         int strength = 0;
         int dexterity = 0;
         int intelligence = 0;
@@ -80,7 +80,7 @@ public abstract class Character {
                 intelligence += ((Armor) entry.getValue()).getAttribute().getIntelligence();
             }
         }
-        return new PrimaryAttribute(strength, dexterity, intelligence);
+        return new PrimaryAttributes(strength, dexterity, intelligence);
     }
 
     public String characterSheet() {
